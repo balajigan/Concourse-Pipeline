@@ -2,7 +2,9 @@ resources:
 - name: app_sources
   type: git
   source:
-    uri: https://github.com/balajigan/PCF-HelloWorld.git
+    uri: 
+    username: 
+    password: 
 - name: dev_deployment
   type: cf
   source:
@@ -48,8 +50,8 @@ jobs:
   #  serial: true
   plan:
   - get: app_sources
-    #    passed:
-    #  - build
+    passed:
+      - build
     trigger: true	
   - put: dev_deployment
     params:
